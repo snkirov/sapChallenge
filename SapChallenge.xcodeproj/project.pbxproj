@@ -16,6 +16,9 @@
 		09DB7BBC2738A17900438313 /* SapChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB7BBB2738A17900438313 /* SapChallengeTests.swift */; };
 		09DB7BC62738A17900438313 /* SapChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB7BC52738A17900438313 /* SapChallengeUITests.swift */; };
 		09DB7BC82738A17900438313 /* SapChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB7BC72738A17900438313 /* SapChallengeUITestsLaunchTests.swift */; };
+		314BE97E220B48AA6179CBED /* Pods_SapChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 814AE2CB118AD1752A256B56 /* Pods_SapChallenge.framework */; };
+		AEEB8DB94A10876A4A40D2BB /* Pods_SapChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD2F35996F9C8D6A231BB9C /* Pods_SapChallengeTests.framework */; };
+		D7B6F47B7D45415E7D2AD710 /* Pods_SapChallenge_SapChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDB856976BF8EBA4723E8F8F /* Pods_SapChallenge_SapChallengeUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,15 @@
 		09DB7BC12738A17900438313 /* SapChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SapChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09DB7BC52738A17900438313 /* SapChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SapChallengeUITests.swift; sourceTree = "<group>"; };
 		09DB7BC72738A17900438313 /* SapChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SapChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		32BBEF0CDB24CE7D8A080A9C /* Pods-SapChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SapChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-SapChallengeTests/Pods-SapChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3FD2F35996F9C8D6A231BB9C /* Pods_SapChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SapChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		666115DCEFF3A69EABA6C4B2 /* Pods-SapChallenge-SapChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SapChallenge-SapChallengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-SapChallenge-SapChallengeUITests/Pods-SapChallenge-SapChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		814AE2CB118AD1752A256B56 /* Pods_SapChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SapChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8836EB4B4CDF8AFB6071A4A1 /* Pods-SapChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SapChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-SapChallengeTests/Pods-SapChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
+		912E98522B387D142EC04EB6 /* Pods-SapChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SapChallenge.debug.xcconfig"; path = "Target Support Files/Pods-SapChallenge/Pods-SapChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		93C78B02E5E2A54E7A4CDFAA /* Pods-SapChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SapChallenge.release.xcconfig"; path = "Target Support Files/Pods-SapChallenge/Pods-SapChallenge.release.xcconfig"; sourceTree = "<group>"; };
+		E69D1FE003A40034CCEF7666 /* Pods-SapChallenge-SapChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SapChallenge-SapChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-SapChallenge-SapChallengeUITests/Pods-SapChallenge-SapChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FDB856976BF8EBA4723E8F8F /* Pods_SapChallenge_SapChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SapChallenge_SapChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				314BE97E220B48AA6179CBED /* Pods_SapChallenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEEB8DB94A10876A4A40D2BB /* Pods_SapChallengeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +84,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7B6F47B7D45415E7D2AD710 /* Pods_SapChallenge_SapChallengeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0595BAAEDEBEEFC7ADB87606 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				912E98522B387D142EC04EB6 /* Pods-SapChallenge.debug.xcconfig */,
+				93C78B02E5E2A54E7A4CDFAA /* Pods-SapChallenge.release.xcconfig */,
+				666115DCEFF3A69EABA6C4B2 /* Pods-SapChallenge-SapChallengeUITests.debug.xcconfig */,
+				E69D1FE003A40034CCEF7666 /* Pods-SapChallenge-SapChallengeUITests.release.xcconfig */,
+				32BBEF0CDB24CE7D8A080A9C /* Pods-SapChallengeTests.debug.xcconfig */,
+				8836EB4B4CDF8AFB6071A4A1 /* Pods-SapChallengeTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		09DB7B982738A17200438313 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +111,8 @@
 				09DB7BBA2738A17900438313 /* SapChallengeTests */,
 				09DB7BC42738A17900438313 /* SapChallengeUITests */,
 				09DB7BA22738A17200438313 /* Products */,
+				0595BAAEDEBEEFC7ADB87606 /* Pods */,
+				77BBBBB4D8B254C206F549BD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +157,16 @@
 			path = SapChallengeUITests;
 			sourceTree = "<group>";
 		};
+		77BBBBB4D8B254C206F549BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				814AE2CB118AD1752A256B56 /* Pods_SapChallenge.framework */,
+				FDB856976BF8EBA4723E8F8F /* Pods_SapChallenge_SapChallengeUITests.framework */,
+				3FD2F35996F9C8D6A231BB9C /* Pods_SapChallengeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +174,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09DB7BCB2738A17900438313 /* Build configuration list for PBXNativeTarget "SapChallenge" */;
 			buildPhases = (
+				3A954D41E6A1685594A99F18 /* [CP] Check Pods Manifest.lock */,
+				09DB7BD42738A40C00438313 /* ShellScript */,
 				09DB7B9D2738A17200438313 /* Sources */,
 				09DB7B9E2738A17200438313 /* Frameworks */,
 				09DB7B9F2738A17200438313 /* Resources */,
+				F46DC9EE2A42FAB227DBC1A7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +194,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09DB7BCE2738A17900438313 /* Build configuration list for PBXNativeTarget "SapChallengeTests" */;
 			buildPhases = (
+				9E71A627DA6787E711950D1E /* [CP] Check Pods Manifest.lock */,
 				09DB7BB32738A17900438313 /* Sources */,
 				09DB7BB42738A17900438313 /* Frameworks */,
 				09DB7BB52738A17900438313 /* Resources */,
@@ -169,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09DB7BD12738A17900438313 /* Build configuration list for PBXNativeTarget "SapChallengeUITests" */;
 			buildPhases = (
+				7769CACBA1033812C5FFEB6C /* [CP] Check Pods Manifest.lock */,
 				09DB7BBD2738A17900438313 /* Sources */,
 				09DB7BBE2738A17900438313 /* Frameworks */,
 				09DB7BBF2738A17900438313 /* Resources */,
+				2841792C0030BD549590D294 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +298,126 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09DB7BD42738A40C00438313 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		2841792C0030BD549590D294 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SapChallenge-SapChallengeUITests/Pods-SapChallenge-SapChallengeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SapChallenge-SapChallengeUITests/Pods-SapChallenge-SapChallengeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SapChallenge-SapChallengeUITests/Pods-SapChallenge-SapChallengeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3A954D41E6A1685594A99F18 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SapChallenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7769CACBA1033812C5FFEB6C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SapChallenge-SapChallengeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E71A627DA6787E711950D1E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SapChallengeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F46DC9EE2A42FAB227DBC1A7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SapChallenge/Pods-SapChallenge-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SapChallenge/Pods-SapChallenge-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SapChallenge/Pods-SapChallenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		09DB7B9D2738A17200438313 /* Sources */ = {
@@ -434,6 +600,7 @@
 		};
 		09DB7BCC2738A17900438313 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 912E98522B387D142EC04EB6 /* Pods-SapChallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -462,6 +629,7 @@
 		};
 		09DB7BCD2738A17900438313 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93C78B02E5E2A54E7A4CDFAA /* Pods-SapChallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -490,6 +658,7 @@
 		};
 		09DB7BCF2738A17900438313 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32BBEF0CDB24CE7D8A080A9C /* Pods-SapChallengeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +684,7 @@
 		};
 		09DB7BD02738A17900438313 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8836EB4B4CDF8AFB6071A4A1 /* Pods-SapChallengeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -540,6 +710,7 @@
 		};
 		09DB7BD22738A17900438313 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 666115DCEFF3A69EABA6C4B2 /* Pods-SapChallenge-SapChallengeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -563,6 +734,7 @@
 		};
 		09DB7BD32738A17900438313 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E69D1FE003A40034CCEF7666 /* Pods-SapChallenge-SapChallengeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

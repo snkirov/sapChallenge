@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (5.4.4)
+  - SwiftLint (0.44.0)
+  - TwoWayBondage (2.2.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.4)
+  - SwiftLint
+  - TwoWayBondage
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - SwiftLint
+    - TwoWayBondage
+
+SPEC CHECKSUMS:
+  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  SwiftLint: e96c0a8c770c7ebbc4d36c55baf9096bb65c4584
+  TwoWayBondage: bb5475a546a41719d61cac025a12a969fab0cb5e
+
+PODFILE CHECKSUM: a890678309b1aa6240236396069fa0ef30398982
+
+COCOAPODS: 1.9.2
