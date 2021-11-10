@@ -19,6 +19,13 @@ class Repository {
             completion(response.value?.photos.photo)
         }
     }
+    
+    public static func downloadImage(from data: ImageData, completion: @escaping (Data?) -> Void) {
+        let downloadUrl = String(format: imageUrl, String(data.farm), data.server, data.id, data.secret)
+        AF.download(downloadUrl).responseData{ response in
+            completion(response.value)
+        }
+    }
 }
 
 struct MyResponse: Codable {
