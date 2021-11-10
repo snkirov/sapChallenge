@@ -11,9 +11,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        Repository.getImages(byTerm: "Munich") { response in
+            debugPrint(response)
+        }
     }
-
-
 }
-
