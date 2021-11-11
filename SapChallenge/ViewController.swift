@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -46,7 +47,8 @@ class ViewController: UIViewController {
     
     @IBAction func didTapHistory(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "TableViewController")
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "TableViewController") as? TableViewController else { return }
+        vc.delegate = self
         navigationController?.show(vc, sender: self)
     }
 }
@@ -112,5 +114,13 @@ extension ViewController: UISearchBarDelegate {
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    }
+}
+
+extension ViewController: HistoryDelegate {
+    func didCloseHistoryScreen(didCancel: Bool, term: String) {
+        guard !didCancel else { return }
+        searchBar.text = term
+        viewModel.searchBy(term: term)
     }
 }

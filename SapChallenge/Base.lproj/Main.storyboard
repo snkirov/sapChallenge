@@ -95,6 +95,7 @@
                     <connections>
                         <outlet property="collectionView" destination="HQG-fM-44f" id="LOP-Ni-5vI"/>
                         <outlet property="loadingIndicator" destination="WA1-GL-tlM" id="e5X-uL-Ati"/>
+                        <outlet property="searchBar" destination="SUp-vc-cMX" id="pNK-tO-yXX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
