@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09D67685273D24A000A865A6 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D67684273D24A000A865A6 /* TableViewController.swift */; };
+		09D67687273D24B400A865A6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D67686273D24B400A865A6 /* TableViewCell.swift */; };
 		09DB7BA52738A17200438313 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB7BA42738A17200438313 /* AppDelegate.swift */; };
 		09DB7BA72738A17200438313 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB7BA62738A17200438313 /* SceneDelegate.swift */; };
 		09DB7BA92738A17200438313 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB7BA82738A17200438313 /* ViewController.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09D67684273D24A000A865A6 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		09D67686273D24B400A865A6 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		09DB7BA12738A17200438313 /* SapChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SapChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09DB7BA42738A17200438313 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09DB7BA62738A17200438313 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 				09DB7BB22738A17800438313 /* Info.plist */,
 				09DB7BD5273C78A500438313 /* ViewModel.swift */,
 				09DB7BD7273C78C000438313 /* Repository.swift */,
+				09D67684273D24A000A865A6 /* TableViewController.swift */,
+				09D67686273D24B400A865A6 /* TableViewCell.swift */,
 			);
 			path = SapChallenge;
 			sourceTree = "<group>";
@@ -434,6 +440,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				09DB7BA92738A17200438313 /* ViewController.swift in Sources */,
+				09D67687273D24B400A865A6 /* TableViewCell.swift in Sources */,
+				09D67685273D24A000A865A6 /* TableViewController.swift in Sources */,
 				09DB7BA52738A17200438313 /* AppDelegate.swift in Sources */,
 				09DB7BDA273C8F6B00438313 /* CollectionViewCell.swift in Sources */,
 				09DB7BD8273C78C000438313 /* Repository.swift in Sources */,

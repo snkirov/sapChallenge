@@ -11,6 +11,7 @@ import TwoWayBondage
 class ViewModel {
     
     var imageData = Observable<[ImageData]>()
+    var isInitialyLoading = Observable<Bool>()
     var currentPage = 0
     var maxPages = 0
     var term = ""
@@ -22,11 +23,14 @@ class ViewModel {
     func searchBy(term: String) {
         self.term = term
         imageData.value = []
+        guard term != "" else { return }
+        isInitialyLoading.value = true
         Repository.getImages(byTerm: term) { [weak self] response in
             guard let strongSelf = self else { return }
             strongSelf.currentPage = response?.page ?? 0
             strongSelf.maxPages = response?.pages ?? 0
             strongSelf.imageData.value = response?.photo
+            strongSelf.isInitialyLoading.value = false
         }
     }
     

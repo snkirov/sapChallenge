@@ -9,18 +9,47 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
+    
     var viewModel = ViewModel()
     private let reuseIdentifier = "CollectionViewCell"
+    
+    override func viewWillLoad(animated: Bool) {
+        navigationItem.title = "Search results"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "History", style: .plain, target: nil, action: #selector(openHistory))
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.searchBy(term: "Munich")
-        navigationItem.title = "Search results"
         
         viewModel.imageData.bindAndFire { [weak self] _ in
-            self?.collectionView.reloadData()
+            guard let strongSelf = self else { return }
+            if (strongSelf.viewModel.isInitialyLoading.value ?? true) {
+                strongSelf.collectionView.reloadData()
+            } else {
+                UIView.performWithoutAnimation({
+                    strongSelf.collectionView.reloadData()
+                })
+            }
         }
+        
+        viewModel.isInitialyLoading.bindAndFire { [weak self] isLoading in
+            guard let strongSelf = self else { return }
+            strongSelf.loadingIndicator.isHidden = !isLoading
+            if isLoading {
+                strongSelf.loadingIndicator.startAnimating()
+            } else {
+                strongSelf.loadingIndicator.stopAnimating()
+            }
+        }
+    }
+    
+    @objc func openHistory() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "TableViewController")
+        navigationController?.show(vc, sender: self)
     }
 }
 
@@ -73,14 +102,17 @@ extension ViewController: UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        
+        viewModel.searchBy(term: "")
     }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("We clicke zi button")
+//        let keyword = searchBar.text ?? ""
         viewModel.searchBy(term: searchBar.text ?? "")
+//        var titleString = ""
+//        titleString = keyword != "" ? "\"\(keyword)\"" : "Search for a word"
+//        navigationItem.title = titleString
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("We here")
     }
 }
