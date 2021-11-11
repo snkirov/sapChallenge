@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SearchScreenViewController.swift
 //  SapChallenge
 //
 //  Created by Svilen Kirov on 8.11.21.
@@ -7,14 +7,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SearchScreenViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var viewModel = ViewModel()
-    private let reuseIdentifier = "CollectionViewCell"
+    var viewModel = SearchScreenViewModel()
+    private let reuseIdentifier = "SearchScreenCollectionViewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,18 +47,19 @@ class ViewController: UIViewController {
     
     @IBAction func didTapHistory(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "TableViewController") as? TableViewController else { return }
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "HistoryScreenTableViewController") as? HistoryScreenTableViewController else { return }
         vc.delegate = self
+        vc.viewModel = HistoryScreenViewModel()
         navigationController?.show(vc, sender: self)
     }
 }
 
-extension ViewController: UICollectionViewDelegate {
+extension SearchScreenViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     }
 }
 
-extension ViewController: UICollectionViewDelegateFlowLayout {
+extension SearchScreenViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.row == viewModel.imagesCount - 1 {
             viewModel.loadNextPage()
@@ -66,7 +67,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension ViewController: UICollectionViewDataSource {
+extension SearchScreenViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.imagesCount
@@ -74,7 +75,7 @@ extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as? CollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as? SearchScreenCollectionViewCell else { return UICollectionViewCell() }
         
         let data = viewModel.getImageData(for: indexPath.row)
         cell.configureCell(imageData: data)
@@ -92,7 +93,7 @@ extension ViewController: UICollectionViewDataSource {
     }
 }
 
-extension ViewController: UISearchBarDelegate {
+extension SearchScreenViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         
     }
@@ -117,7 +118,7 @@ extension ViewController: UISearchBarDelegate {
     }
 }
 
-extension ViewController: HistoryDelegate {
+extension SearchScreenViewController: HistoryDelegate {
     func didCloseHistoryScreen(didCancel: Bool, term: String) {
         guard !didCancel else { return }
         searchBar.text = term

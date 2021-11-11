@@ -1,5 +1,5 @@
 //
-//  CollectionViewCell.swift
+//  SearchScreenCollectionViewCell.swift
 //  SapChallenge
 //
 //  Created by Svilen Kirov on 11.11.21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CollectionViewCell: UICollectionViewCell {
+class SearchScreenCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     

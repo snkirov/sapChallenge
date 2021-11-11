@@ -1,5 +1,5 @@
 //
-//  ViewModel.swift
+//  SearchScreenViewModel.swift
 //  SapChallenge
 //
 //  Created by Svilen Kirov on 10.11.21.
@@ -8,7 +8,7 @@
 import Foundation
 import TwoWayBondage
 
-class ViewModel {
+class SearchScreenViewModel {
     
     var imageData = Observable<[ImageData]>()
     var isInitialyLoading = Observable<Bool>()

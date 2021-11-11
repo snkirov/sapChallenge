@@ -1,5 +1,5 @@
 //
-//  TableViewController.swift
+//  HistoryScreenTableViewController.swift
 //  SapChallenge
 //
 //  Created by Svilen Kirov on 11.11.21.
@@ -11,25 +11,20 @@ protocol HistoryDelegate: NSObject {
     func didCloseHistoryScreen(didCancel: Bool, term: String)
 }
 
-class TableViewController: UITableViewController {
+class HistoryScreenTableViewController: UITableViewController {
     
     private let reuseIdentifier = "TableViewCell"
     weak var delegate: HistoryDelegate?
+    var viewModel: HistoryScreenViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         navigationItem.title = "History"
-
     }
+    
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return viewModel.searchesCount
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,13 +32,12 @@ class TableViewController: UITableViewController {
             return UITableViewCell()
         }
 
-        cell.title.text = "Abra kadabra"
-
+        cell.title.text = viewModel.previousSearches[indexPath.row]
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.didCloseHistoryScreen(didCancel: false, term: "Whooray")
+        delegate?.didCloseHistoryScreen(didCancel: false, term: viewModel.previousSearches[indexPath.row])
         navigationController?.popViewController(animated: true)
     }
 }
