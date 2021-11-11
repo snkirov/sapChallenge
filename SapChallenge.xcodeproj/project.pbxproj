@@ -18,6 +18,7 @@
 		09DB7BC82738A17900438313 /* SapChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB7BC72738A17900438313 /* SapChallengeUITestsLaunchTests.swift */; };
 		09DB7BD6273C78A500438313 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB7BD5273C78A500438313 /* ViewModel.swift */; };
 		09DB7BD8273C78C000438313 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB7BD7273C78C000438313 /* Repository.swift */; };
+		09DB7BDA273C8F6B00438313 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB7BD9273C8F6B00438313 /* CollectionViewCell.swift */; };
 		314BE97E220B48AA6179CBED /* Pods_SapChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 814AE2CB118AD1752A256B56 /* Pods_SapChallenge.framework */; };
 		AEEB8DB94A10876A4A40D2BB /* Pods_SapChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD2F35996F9C8D6A231BB9C /* Pods_SapChallengeTests.framework */; };
 		D7B6F47B7D45415E7D2AD710 /* Pods_SapChallenge_SapChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDB856976BF8EBA4723E8F8F /* Pods_SapChallenge_SapChallengeUITests.framework */; };
@@ -56,6 +57,7 @@
 		09DB7BC72738A17900438313 /* SapChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SapChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		09DB7BD5273C78A500438313 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		09DB7BD7273C78C000438313 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		09DB7BD9273C8F6B00438313 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		32BBEF0CDB24CE7D8A080A9C /* Pods-SapChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SapChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-SapChallengeTests/Pods-SapChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3FD2F35996F9C8D6A231BB9C /* Pods_SapChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SapChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		666115DCEFF3A69EABA6C4B2 /* Pods-SapChallenge-SapChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SapChallenge-SapChallengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-SapChallenge-SapChallengeUITests/Pods-SapChallenge-SapChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			children = (
 				09DB7BA42738A17200438313 /* AppDelegate.swift */,
 				09DB7BA62738A17200438313 /* SceneDelegate.swift */,
+				09DB7BD9273C8F6B00438313 /* CollectionViewCell.swift */,
 				09DB7BA82738A17200438313 /* ViewController.swift */,
 				09DB7BAA2738A17200438313 /* Main.storyboard */,
 				09DB7BAD2738A17800438313 /* Assets.xcassets */,
@@ -432,6 +435,7 @@
 			files = (
 				09DB7BA92738A17200438313 /* ViewController.swift in Sources */,
 				09DB7BA52738A17200438313 /* AppDelegate.swift in Sources */,
+				09DB7BDA273C8F6B00438313 /* CollectionViewCell.swift in Sources */,
 				09DB7BD8273C78C000438313 /* Repository.swift in Sources */,
 				09DB7BD6273C78A500438313 /* ViewModel.swift in Sources */,
 				09DB7BA72738A17200438313 /* SceneDelegate.swift in Sources */,
