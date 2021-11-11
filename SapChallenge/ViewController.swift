@@ -15,13 +15,11 @@ class ViewController: UIViewController {
     var viewModel = ViewModel()
     private let reuseIdentifier = "CollectionViewCell"
     
-    override func viewWillLoad(animated: Bool) {
-        navigationItem.title = "Search results"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "History", style: .plain, target: nil, action: #selector(openHistory))
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "Search"
+        
         viewModel.searchBy(term: "Munich")
         
         viewModel.imageData.bindAndFire { [weak self] _ in
@@ -46,7 +44,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @objc func openHistory() {
+    @IBAction func didTapHistory(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "TableViewController")
         navigationController?.show(vc, sender: self)
