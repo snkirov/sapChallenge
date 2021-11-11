@@ -24,10 +24,9 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UICollectionViewDelegate {
-    
 }
 
-extension ViewController: UICollectionViewDataSource {
+extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.imagesCount
@@ -42,4 +41,14 @@ extension ViewController: UICollectionViewDataSource {
                 
         return cell
     }
+    
+    // MARK: - UICollectionViewFlowDelegate
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let size = Int((collectionView.frame.size.width - 40) / 3)
+        return CGSize(width: size, height: size)
+    }
+    
 }

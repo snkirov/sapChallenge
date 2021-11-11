@@ -13,6 +13,7 @@ class CollectionViewCell: UICollectionViewCell {
     
     func configureCell(imageData: ImageData?) {
         guard let imageData = imageData else { return }
+        layer.cornerRadius = 5
         loadingIndicator.startAnimating()
         loadingIndicator.isHidden = false
         Repository.downloadImage(from: imageData) { [weak self] data in

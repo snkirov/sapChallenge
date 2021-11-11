@@ -24,6 +24,6 @@ class ViewModel {
     
     func getImageData(for index: Int) -> ImageData? {
         guard index < imagesCount else { return nil }
-        return imageData.value?[index]
+        return imageData.value[index]
     }
 }
