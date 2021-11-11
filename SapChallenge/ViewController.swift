@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.searchBy(term: "Munich")
+        navigationItem.title = "Search results"
         
         viewModel.imageData.bindAndFire { [weak self] _ in
             self?.collectionView.reloadData()
@@ -24,6 +25,8 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    }
 }
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
@@ -60,4 +63,24 @@ extension ViewController: UICollectionViewDataSource {
     }
 }
 
+extension ViewController: UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        
+    }
 
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("We clicke zi button")
+        viewModel.searchBy(term: searchBar.text ?? "")
+    }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print("We here")
+    }
+}

@@ -21,6 +21,7 @@ class ViewModel {
     
     func searchBy(term: String) {
         self.term = term
+        imageData.value = []
         Repository.getImages(byTerm: term) { [weak self] response in
             guard let strongSelf = self else { return }
             strongSelf.currentPage = response?.page ?? 0
