@@ -23,6 +23,23 @@ class SearchScreenViewController: UIViewController {
         
         viewModel.searchBy(term: "Munich")
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        view.addGestureRecognizer(tap)
+        
+        bindEvents()
+    }
+    
+    @IBAction func didTapHistory(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "HistoryScreenTableViewController") as? HistoryScreenTableViewController else { return }
+        vc.delegate = self
+        vc.viewModel = HistoryScreenViewModel()
+        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clearHistory))
+        navigationController?.show(vc, sender: self)
+        handleTap()
+    }
+    
+    private func bindEvents() {
         viewModel.imageData.bindAndFire { [weak self] _ in
             guard let strongSelf = self else { return }
             if (strongSelf.viewModel.isInitialyLoading.value ?? true) {
@@ -45,17 +62,13 @@ class SearchScreenViewController: UIViewController {
         }
     }
     
-    @IBAction func didTapHistory(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "HistoryScreenTableViewController") as? HistoryScreenTableViewController else { return }
-        vc.delegate = self
-        vc.viewModel = HistoryScreenViewModel()
-        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clearHistory))
-        navigationController?.show(vc, sender: self)
-    }
-    
     @objc private func clearHistory() {
         HistoryTracker.clearHistory()
+    }
+    
+    @objc private func handleTap() {
+        guard searchBar.isFirstResponder else { return }
+        searchBar.resignFirstResponder()
     }
 }
 
