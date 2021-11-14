@@ -50,7 +50,12 @@ class SearchScreenViewController: UIViewController {
         guard let vc = storyboard.instantiateViewController(withIdentifier: "HistoryScreenTableViewController") as? HistoryScreenTableViewController else { return }
         vc.delegate = self
         vc.viewModel = HistoryScreenViewModel()
+        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clearHistory))
         navigationController?.show(vc, sender: self)
+    }
+    
+    @objc private func clearHistory() {
+        HistoryTracker.clearHistory()
     }
 }
 
@@ -103,15 +108,11 @@ extension SearchScreenViewController: UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        viewModel.searchBy(term: "")
+        
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        let keyword = searchBar.text ?? ""
         viewModel.searchBy(term: searchBar.text ?? "")
-//        var titleString = ""
-//        titleString = keyword != "" ? "\"\(keyword)\"" : "Search for a word"
-//        navigationItem.title = titleString
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

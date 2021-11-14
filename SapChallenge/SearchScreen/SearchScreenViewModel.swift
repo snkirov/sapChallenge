@@ -24,6 +24,7 @@ class SearchScreenViewModel {
         self.term = term
         imageData.value = []
         guard term != "" else { return }
+        HistoryTracker.addToHistory(term: term)
         isInitialyLoading.value = true
         Repository.getImages(byTerm: term) { [weak self] response in
             guard let strongSelf = self else { return }

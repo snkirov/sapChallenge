@@ -31,13 +31,12 @@ class HistoryScreenTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? TableViewCell else {
             return UITableViewCell()
         }
-
-        cell.title.text = viewModel.previousSearches[indexPath.row]
+        cell.title.text = viewModel.getSearchHistory[indexPath.row]
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.didCloseHistoryScreen(didCancel: false, term: viewModel.previousSearches[indexPath.row])
+        delegate?.didCloseHistoryScreen(didCancel: false, term: viewModel.getSearchHistory[indexPath.row])
         navigationController?.popViewController(animated: true)
     }
 }

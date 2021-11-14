@@ -9,7 +9,12 @@ import Foundation
 
 class HistoryScreenViewModel {
     
-    var previousSearches: [String] = ["Abra", "Kadabra", "Kadastra"]
+    var previousSearches: [String] = HistoryTracker.getHistory()
+    
+    var getSearchHistory: [String] {
+        previousSearches.reversed()
+    }
+    
     var searchesCount: Int {
         previousSearches.count
     }
