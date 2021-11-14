@@ -45,9 +45,16 @@ struct Dummy: Codable {
     var photo: [ImageData]
 }
 
-struct ImageData: Codable {
+struct ImageData: Codable, Equatable {
     var id: String
     var farm: Int
     var server: String
     var secret: String
+    
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        lhs.id == rhs.id &&
+        lhs.farm == rhs.farm &&
+        lhs.server == rhs.server &&
+        lhs.secret == rhs.secret
+    }
 }
