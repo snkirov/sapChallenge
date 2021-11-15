@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0986C79B2741E138006F7F9F /* SearchScreenViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0986C79A2741E138006F7F9F /* SearchScreenViewModelTests.swift */; };
 		0986C79F27420E2E006F7F9F /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0986C79E27420E2E006F7F9F /* Models.swift */; };
+		0986C7A12742102A006F7F9F /* HistoryTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0986C7A02742102A006F7F9F /* HistoryTrackerTests.swift */; };
 		09D67685273D24A000A865A6 /* HistoryScreenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D67684273D24A000A865A6 /* HistoryScreenTableViewController.swift */; };
 		09D67687273D24B400A865A6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D67686273D24B400A865A6 /* TableViewCell.swift */; };
 		09D6768B273D3F2100A865A6 /* HistoryScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D6768A273D3F2100A865A6 /* HistoryScreenViewModel.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		0986C79A2741E138006F7F9F /* SearchScreenViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewModelTests.swift; sourceTree = "<group>"; };
 		0986C79E27420E2E006F7F9F /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		0986C7A02742102A006F7F9F /* HistoryTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTrackerTests.swift; sourceTree = "<group>"; };
 		09D67684273D24A000A865A6 /* HistoryScreenTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryScreenTableViewController.swift; sourceTree = "<group>"; };
 		09D67686273D24B400A865A6 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		09D6768A273D3F2100A865A6 /* HistoryScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryScreenViewModel.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				0986C79A2741E138006F7F9F /* SearchScreenViewModelTests.swift */,
+				0986C7A02742102A006F7F9F /* HistoryTrackerTests.swift */,
 			);
 			path = SapChallengeTests;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0986C79B2741E138006F7F9F /* SearchScreenViewModelTests.swift in Sources */,
+				0986C7A12742102A006F7F9F /* HistoryTrackerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,6 +673,7 @@
 				DEVELOPMENT_TEAM = NMT4KD3985;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SapChallenge/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ImageSeeker;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -683,7 +688,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -698,6 +703,7 @@
 				DEVELOPMENT_TEAM = NMT4KD3985;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SapChallenge/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ImageSeeker;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -712,7 +718,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
