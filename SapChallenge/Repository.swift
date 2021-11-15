@@ -15,19 +15,21 @@ let imageUrl = "https://farm%@.static.flickr.com/%@/%@_%@.jpg"
 
 class Repository {
     
-    public static func getImages(byTerm term: String, completion: @escaping (Dummy?) -> Void) {
+    static let sharedInstance = Repository()
+    
+    public func getImages(byTerm term: String, completion: @escaping (Dummy?) -> Void) {
         AF.request(url + term).responseDecodable(of: MyResponse.self) { response in
             completion(response.value?.photos)
         }
     }
     
-    public static func getPageFor(term: String, _ pageNumber: Int, completion: @escaping ([ImageData]?) -> Void) {
+    public func getPageFor(term: String, _ pageNumber: Int, completion: @escaping ([ImageData]?) -> Void) {
         AF.request(url + term + "&page=\(pageNumber)").responseDecodable(of: MyResponse.self) { response in
             completion(response.value?.photos.photo)
         }
     }
     
-    public static func downloadImage(from data: ImageData, completion: @escaping (Data?) -> Void) {
+    public func downloadImage(from data: ImageData, completion: @escaping (Data?) -> Void) {
         let downloadUrl = String(format: imageUrl, String(data.farm), data.server, data.id, data.secret)
         AF.download(downloadUrl).responseData { response in
             completion(response.value)

@@ -10,18 +10,20 @@ import Foundation
 private let historyKey = "history"
 class HistoryTracker {
     
-    static func addToHistory(term: String) {
+    static let sharedInstance = HistoryTracker()
+    
+    func addToHistory(term: String) {
         let userDefaults = UserDefaults.standard
         var history: [String] = userDefaults.stringArray(forKey: historyKey) ?? []
         history.append(term)
         userDefaults.set(history, forKey: historyKey)
     }
     
-    static func clearHistory() {
+    func clearHistory() {
         UserDefaults.standard.removeObject(forKey: historyKey)
     }
     
-    static func getHistory() -> [String] {
+    func getHistory() -> [String] {
         return UserDefaults.standard.stringArray(forKey: historyKey) ?? []
     }
 }

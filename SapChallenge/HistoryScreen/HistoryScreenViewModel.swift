@@ -9,7 +9,13 @@ import Foundation
 
 class HistoryScreenViewModel {
     
-    var previousSearches: [String] = HistoryTracker.getHistory()
+    private var previousSearches: [String]
+    private var historyTracker: HistoryTracker
+    
+    init(historyTracker: HistoryTracker = HistoryTracker.sharedInstance) {
+        self.historyTracker = historyTracker
+        previousSearches = historyTracker.getHistory()
+    }
     
     var getSearchHistory: [String] {
         previousSearches.reversed()

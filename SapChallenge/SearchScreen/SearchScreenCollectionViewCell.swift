@@ -11,6 +11,16 @@ class SearchScreenCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     private var imageData: ImageData?
+    private var repository: Repository = Repository.sharedInstance
+    
+//    init(repository: Repository = Repository.sharedInstance) {
+//        self.repository = repository
+//        super.init(frame: <#T##CGRect#>)
+//    }
+    
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     func configureCell(imageData: ImageData?) {
         guard let imageData = imageData,
@@ -22,7 +32,7 @@ class SearchScreenCollectionViewCell: UICollectionViewCell {
         layer.cornerRadius = 5
         loadingIndicator.startAnimating()
         loadingIndicator.isHidden = false
-        Repository.downloadImage(from: imageData) { [weak self] data in
+        repository.downloadImage(from: imageData) { [weak self] data in
             guard let strongSelf = self,
                   let data = data else { return }
             strongSelf.loadingIndicator.isHidden = true

@@ -20,13 +20,22 @@ class SearchScreenViewModel {
         imageData.value?.count ?? 0
     }
     
+    private var repository: Repository
+    private var historyTracker: HistoryTracker
+    
+    init(repository: Repository = Repository.sharedInstance,
+         historyTracker: HistoryTracker = HistoryTracker.sharedInstance) {
+        self.repository = repository
+        self.historyTracker = historyTracker
+    }
+    
     func searchBy(term: String) {
         self.term = term
         imageData.value = []
         guard term != "" else { return }
-        HistoryTracker.addToHistory(term: term)
+        historyTracker.addToHistory(term: term)
         isInitialyLoading.value = true
-        Repository.getImages(byTerm: term) { [weak self] response in
+        repository.getImages(byTerm: term) { [weak self] response in
             guard let strongSelf = self else { return }
             strongSelf.currentPage = response?.page ?? 0
             strongSelf.maxPages = response?.pages ?? 0
@@ -38,7 +47,7 @@ class SearchScreenViewModel {
     func loadNextPage() {
         guard currentPage < maxPages else { return }
         currentPage += 1
-        Repository.getPageFor(term: term, currentPage) { [weak self] imageData in
+        repository.getPageFor(term: term, currentPage) { [weak self] imageData in
             guard let imageData = imageData else { return }
             self?.imageData.value?.append(contentsOf: imageData)
         }
@@ -47,5 +56,9 @@ class SearchScreenViewModel {
     func getImageData(for index: Int) -> ImageData? {
         guard index < imagesCount else { return nil }
         return imageData.value?[index]
+    }
+    
+    func clearHistory() {
+        historyTracker.clearHistory()
     }
 }

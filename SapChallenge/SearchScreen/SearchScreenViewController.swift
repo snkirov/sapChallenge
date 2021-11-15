@@ -63,7 +63,7 @@ class SearchScreenViewController: UIViewController {
     }
     
     @objc private func clearHistory() {
-        HistoryTracker.clearHistory()
+        viewModel.clearHistory()
     }
     
     @objc private func handleTap() {
