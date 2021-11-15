@@ -27,7 +27,7 @@ class SearchScreenViewController: UIViewController {
         
         navigationItem.title = "Search"
         
-        viewModel.start()
+        viewModel.searchBy(term: "Munich")
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         view.addGestureRecognizer(tap)
@@ -93,7 +93,7 @@ extension SearchScreenViewController: UICollectionViewDelegate {
 
 extension SearchScreenViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == viewModel.imagesCount - 10 {
+        if indexPath.row == viewModel.imagesCount - 1 {
             viewModel.loadNextPage()
         }
     }
@@ -139,7 +139,7 @@ extension SearchScreenViewController: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        viewModel.search(byTerm: searchBar.text ?? "")
+        viewModel.searchBy(term: searchBar.text ?? "")
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -150,6 +150,6 @@ extension SearchScreenViewController: HistoryDelegate {
     func didCloseHistoryScreen(didCancel: Bool, term: String) {
         guard !didCancel else { return }
         searchBar.text = term
-        viewModel.search(byTerm: term)
+        viewModel.searchBy(term: term)
     }
 }

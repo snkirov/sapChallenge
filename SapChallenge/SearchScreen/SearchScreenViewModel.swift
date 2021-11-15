@@ -29,27 +29,19 @@ class SearchScreenViewModel {
         self.historyTracker = historyTracker
     }
     
-    func start() {
-        search()
-    }
-    
-    func search(byTerm term: String = "") {
+    func searchBy(term: String) {
         self.term = term
         isLoading.value = true
         imageData.value = []
-        let completion: (Dummy?) -> Void = { [weak self] response in
+        guard term != "" else { return }
+        historyTracker.addToHistory(term: term)
+        repository.getImages(byTerm: term) { [weak self] response in
             guard let strongSelf = self else { return }
             strongSelf.currentPage = response?.page ?? 0
             strongSelf.maxPages = response?.pages ?? 0
             strongSelf.imageData.value = response?.photo
             strongSelf.isLoading.value = false
         }
-        guard term != "" else {
-            repository.getRecentImages(completion: completion)
-            return
-        }
-        historyTracker.addToHistory(term: term)
-        repository.getImages(byTerm: term, completion: completion)
     }
     
     func loadNextPage() {

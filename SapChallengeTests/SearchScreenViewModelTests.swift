@@ -22,7 +22,7 @@ class SearchScreenViewModelTests: XCTestCase {
         service = MockRepositoryService()
         tracker = MockHistoryTracker()
         viewModel = SearchScreenViewModel(repository: service, historyTracker: tracker)
-        viewModel.search(byTerm: "Hawai")
+        viewModel.searchBy(term: "Hawai")
     }
     
     override func tearDown() {
@@ -35,7 +35,7 @@ class SearchScreenViewModelTests: XCTestCase {
 
     func testSearchForTerm() throws {
         SearchScreenViewModelTests.currentExpectation = self.expectation(description: "Searching")
-        viewModel.search(byTerm: "Hawai")
+        viewModel.searchBy(term: "Hawai")
         XCTAssertEqual(viewModel.term, "Hawai", "Expected Hawai as a Term")
         waitForExpectations(timeout: 5, handler: nil)
         XCTAssertEqual(viewModel.currentPage, 0, "Expected current page to be 0.")
@@ -46,7 +46,7 @@ class SearchScreenViewModelTests: XCTestCase {
     
     // Term property should remain consistent
     func testSearchForNoImagesTerm() throws {
-        viewModel.search(byTerm: "jsakldjskaldlksajkdjklsajkdlsajkldjlksajdkl")
+        viewModel.searchBy(term: "jsakldjskaldlksajkdjklsajkdlsajkldjlksajdkl")
         XCTAssertEqual(viewModel.term, "jsakldjskaldlksajkdjklsajkdlsajkldjlksajdkl", "Expected jsakldjskaldlksajkdjklsajkdlsajkldjlksajdkl as a Term")
     }
     

@@ -11,14 +11,10 @@ import Alamofire
 let url = """
 https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=37ad288835e4c64fc0cb8af3f3a1a65d&format=json&nojsoncallback=1&safe_search=1&text=
 """
-let recentsUrl = """
-https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=37ad288835e4c64fc0cb8af3f3a1a65d&format=json&nojsoncallback=1&safe_search=1
-"""
 let imageUrl = "https://farm%@.static.flickr.com/%@/%@_%@.jpg"
 
 protocol RepositoryProtocol: AnyObject {
     func getImages(byTerm term: String, completion: @escaping (Dummy?) -> Void)
-    func getRecentImages(completion: @escaping (Dummy?) -> Void)
     func getPageFor(term: String, _ pageNumber: Int, completion: @escaping ([ImageData]?) -> Void)
     func downloadImage(from data: ImageData, completion: @escaping (Data?) -> Void)
 }
@@ -34,15 +30,8 @@ extension Repository: RepositoryProtocol {
         }
     }
     
-    public func getRecentImages(completion: @escaping (Dummy?) -> Void) {
-        AF.request(recentsUrl).responseDecodable(of: MyResponse.self) { response in
-            completion(response.value?.photos)
-        }
-    }
-    
     public func getPageFor(term: String, _ pageNumber: Int, completion: @escaping ([ImageData]?) -> Void) {
-        let reqUrl = term == "" ? recentsUrl : url
-        AF.request(reqUrl + term + "&page=\(pageNumber)").responseDecodable(of: MyResponse.self) { response in
+        AF.request(url + term + "&page=\(pageNumber)").responseDecodable(of: MyResponse.self) { response in
             completion(response.value?.photos.photo)
         }
     }
