@@ -13,10 +13,17 @@ https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=37ad28
 """
 let imageUrl = "https://farm%@.static.flickr.com/%@/%@_%@.jpg"
 
+protocol RepositoryProtocol: AnyObject {
+    func getImages(byTerm term: String, completion: @escaping (Dummy?) -> Void)
+    func getPageFor(term: String, _ pageNumber: Int, completion: @escaping ([ImageData]?) -> Void)
+    func downloadImage(from data: ImageData, completion: @escaping (Data?) -> Void)
+}
+
 class Repository {
-    
     static let sharedInstance = Repository()
-    
+}
+
+extension Repository: RepositoryProtocol {
     public func getImages(byTerm term: String, completion: @escaping (Dummy?) -> Void) {
         AF.request(url + term).responseDecodable(of: MyResponse.self) { response in
             completion(response.value?.photos)

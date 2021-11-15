@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0986C79B2741E138006F7F9F /* SearchScreenViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0986C79A2741E138006F7F9F /* SearchScreenViewModelTests.swift */; };
 		09D67685273D24A000A865A6 /* HistoryScreenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D67684273D24A000A865A6 /* HistoryScreenTableViewController.swift */; };
 		09D67687273D24B400A865A6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D67686273D24B400A865A6 /* TableViewCell.swift */; };
 		09D6768B273D3F2100A865A6 /* HistoryScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D6768A273D3F2100A865A6 /* HistoryScreenViewModel.swift */; };
@@ -17,7 +18,6 @@
 		09DB7BAC2738A17200438313 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DB7BAA2738A17200438313 /* Main.storyboard */; };
 		09DB7BAE2738A17800438313 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09DB7BAD2738A17800438313 /* Assets.xcassets */; };
 		09DB7BB12738A17800438313 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DB7BAF2738A17800438313 /* LaunchScreen.storyboard */; };
-		09DB7BBC2738A17900438313 /* SapChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB7BBB2738A17900438313 /* SapChallengeTests.swift */; };
 		09DB7BC62738A17900438313 /* SapChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB7BC52738A17900438313 /* SapChallengeUITests.swift */; };
 		09DB7BC82738A17900438313 /* SapChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB7BC72738A17900438313 /* SapChallengeUITestsLaunchTests.swift */; };
 		09DB7BD6273C78A500438313 /* SearchScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB7BD5273C78A500438313 /* SearchScreenViewModel.swift */; };
@@ -46,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0986C79A2741E138006F7F9F /* SearchScreenViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewModelTests.swift; sourceTree = "<group>"; };
 		09D67684273D24A000A865A6 /* HistoryScreenTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryScreenTableViewController.swift; sourceTree = "<group>"; };
 		09D67686273D24B400A865A6 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		09D6768A273D3F2100A865A6 /* HistoryScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryScreenViewModel.swift; sourceTree = "<group>"; };
@@ -59,7 +60,6 @@
 		09DB7BB02738A17800438313 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09DB7BB22738A17800438313 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09DB7BB72738A17900438313 /* SapChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SapChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		09DB7BBB2738A17900438313 /* SapChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SapChallengeTests.swift; sourceTree = "<group>"; };
 		09DB7BC12738A17900438313 /* SapChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SapChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09DB7BC52738A17900438313 /* SapChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SapChallengeUITests.swift; sourceTree = "<group>"; };
 		09DB7BC72738A17900438313 /* SapChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SapChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -180,7 +180,7 @@
 		09DB7BBA2738A17900438313 /* SapChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				09DB7BBB2738A17900438313 /* SapChallengeTests.swift */,
+				0986C79A2741E138006F7F9F /* SearchScreenViewModelTests.swift */,
 			);
 			path = SapChallengeTests;
 			sourceTree = "<group>";
@@ -478,7 +478,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09DB7BBC2738A17900438313 /* SapChallengeTests.swift in Sources */,
+				0986C79B2741E138006F7F9F /* SearchScreenViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

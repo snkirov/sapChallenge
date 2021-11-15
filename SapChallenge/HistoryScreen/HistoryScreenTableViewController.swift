@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol HistoryDelegate: NSObject {
+protocol HistoryDelegate: AnyObject {
     func didCloseHistoryScreen(didCancel: Bool, term: String)
 }
 

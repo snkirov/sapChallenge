@@ -11,7 +11,7 @@ class SearchScreenCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     private var imageData: ImageData?
-    private var repository: Repository = Repository.sharedInstance
+    private var repository: RepositoryProtocol = Repository.sharedInstance
     
 //    init(repository: Repository = Repository.sharedInstance) {
 //        self.repository = repository

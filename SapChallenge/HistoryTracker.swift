@@ -8,9 +8,18 @@
 import Foundation
 
 private let historyKey = "history"
+
+protocol HistoryTrackerProtocol: AnyObject {
+    func addToHistory(term: String)
+    func clearHistory()
+    func getHistory() -> [String]
+}
+
 class HistoryTracker {
-    
     static let sharedInstance = HistoryTracker()
+}
+
+extension HistoryTracker: HistoryTrackerProtocol {
     
     func addToHistory(term: String) {
         let userDefaults = UserDefaults.standard

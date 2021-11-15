@@ -10,9 +10,9 @@ import Foundation
 class HistoryScreenViewModel {
     
     private var previousSearches: [String]
-    private var historyTracker: HistoryTracker
+    private weak var historyTracker: HistoryTrackerProtocol!
     
-    init(historyTracker: HistoryTracker = HistoryTracker.sharedInstance) {
+    init(historyTracker: HistoryTrackerProtocol = HistoryTracker.sharedInstance) {
         self.historyTracker = historyTracker
         previousSearches = historyTracker.getHistory()
     }

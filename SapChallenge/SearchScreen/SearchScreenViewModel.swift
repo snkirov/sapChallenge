@@ -20,11 +20,11 @@ class SearchScreenViewModel {
         imageData.value?.count ?? 0
     }
     
-    private var repository: Repository
-    private var historyTracker: HistoryTracker
+    private weak var repository: RepositoryProtocol!
+    private weak var historyTracker: HistoryTrackerProtocol!
     
-    init(repository: Repository = Repository.sharedInstance,
-         historyTracker: HistoryTracker = HistoryTracker.sharedInstance) {
+    init(repository: RepositoryProtocol = Repository.sharedInstance,
+         historyTracker: HistoryTrackerProtocol = HistoryTracker.sharedInstance) {
         self.repository = repository
         self.historyTracker = historyTracker
     }
