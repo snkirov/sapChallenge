@@ -24,4 +24,9 @@ class HistoryScreenViewModel {
     var searchesCount: Int {
         previousSearches.count
     }
+    
+    func clearHistory() {
+        historyTracker.clearHistory()
+        previousSearches = []
+    }
 }

@@ -7,11 +7,16 @@
 
 import UIKit
 
+protocol HistoryScreenViewControllerProtocol: AnyObject {
+    func didClearHistory()
+}
+
 class SearchScreenViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
+    weak var historyController: HistoryScreenViewControllerProtocol?
     
     var viewModel = SearchScreenViewModel()
     private let reuseIdentifier = "SearchScreenCollectionViewCell"
@@ -36,6 +41,8 @@ class SearchScreenViewController: UIViewController {
         vc.viewModel = HistoryScreenViewModel()
         vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clearHistory))
         navigationController?.show(vc, sender: self)
+        
+        historyController = vc
         handleTap()
     }
     
@@ -63,12 +70,13 @@ class SearchScreenViewController: UIViewController {
     }
     
     @objc private func clearHistory() {
-        viewModel.clearHistory()
+        historyController?.didClearHistory()
     }
     
     @objc private func handleTap() {
         guard searchBar.isFirstResponder else { return }
         searchBar.resignFirstResponder()
+        searchBar.text = viewModel.term
     }
 }
 

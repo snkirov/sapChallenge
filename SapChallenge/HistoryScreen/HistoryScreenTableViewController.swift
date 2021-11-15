@@ -40,3 +40,12 @@ class HistoryScreenTableViewController: UITableViewController {
         navigationController?.popViewController(animated: true)
     }
 }
+
+extension HistoryScreenTableViewController: HistoryScreenViewControllerProtocol {
+    func didClearHistory() {
+        viewModel.clearHistory()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+}

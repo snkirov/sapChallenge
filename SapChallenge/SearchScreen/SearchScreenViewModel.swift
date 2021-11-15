@@ -57,8 +57,4 @@ class SearchScreenViewModel {
         guard index < imagesCount else { return nil }
         return imageData.value?[index]
     }
-    
-    func clearHistory() {
-        historyTracker.clearHistory()
-    }
 }
