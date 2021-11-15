@@ -13,7 +13,6 @@
 		09D6768B273D3F2100A865A6 /* HistoryScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D6768A273D3F2100A865A6 /* HistoryScreenViewModel.swift */; };
 		09D6768D273D40A800A865A6 /* HistoryTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D6768C273D40A800A865A6 /* HistoryTracker.swift */; };
 		09DB7BA52738A17200438313 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB7BA42738A17200438313 /* AppDelegate.swift */; };
-		09DB7BA72738A17200438313 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB7BA62738A17200438313 /* SceneDelegate.swift */; };
 		09DB7BA92738A17200438313 /* SearchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DB7BA82738A17200438313 /* SearchScreenViewController.swift */; };
 		09DB7BAC2738A17200438313 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09DB7BAA2738A17200438313 /* Main.storyboard */; };
 		09DB7BAE2738A17800438313 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09DB7BAD2738A17800438313 /* Assets.xcassets */; };
@@ -53,7 +52,6 @@
 		09D6768C273D40A800A865A6 /* HistoryTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTracker.swift; sourceTree = "<group>"; };
 		09DB7BA12738A17200438313 /* SapChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SapChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09DB7BA42738A17200438313 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		09DB7BA62738A17200438313 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		09DB7BA82738A17200438313 /* SearchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewController.swift; sourceTree = "<group>"; };
 		09DB7BAB2738A17200438313 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		09DB7BAD2738A17800438313 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -166,7 +164,6 @@
 				09D67689273D3ED000A865A6 /* HistoryScreen */,
 				09D67688273D3E9000A865A6 /* SearchScreen */,
 				09DB7BA42738A17200438313 /* AppDelegate.swift */,
-				09DB7BA62738A17200438313 /* SceneDelegate.swift */,
 				09DB7BAA2738A17200438313 /* Main.storyboard */,
 				09DB7BAD2738A17800438313 /* Assets.xcassets */,
 				09DB7BAF2738A17800438313 /* LaunchScreen.storyboard */,
@@ -470,7 +467,6 @@
 				09DB7BDA273C8F6B00438313 /* SearchScreenCollectionViewCell.swift in Sources */,
 				09DB7BD8273C78C000438313 /* Repository.swift in Sources */,
 				09DB7BD6273C78A500438313 /* SearchScreenViewModel.swift in Sources */,
-				09DB7BA72738A17200438313 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

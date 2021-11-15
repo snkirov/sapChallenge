@@ -30,10 +30,10 @@ class SearchScreenViewModel {
     }
     
     func searchBy(term: String) {
+        guard term != "" else { return }
         self.term = term
         isLoading.value = true
         imageData.value = []
-        guard term != "" else { return }
         historyTracker.addToHistory(term: term)
         repository.getImages(byTerm: term) { [weak self] response in
             guard let strongSelf = self else { return }
