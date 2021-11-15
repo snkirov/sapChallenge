@@ -41,18 +41,13 @@ class SearchScreenViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.currentPage, 0, "Expected current page to be 0.")
         XCTAssertEqual(viewModel.maxPages, 10, "Expected to have 10 as max pages.")
         XCTAssertEqual(viewModel.imagesCount, 1, "Expected to have 1 images.")
-        XCTAssertEqual(viewModel.isInitialyLoading.value, false, "Expected to have stopped loading.")
+        XCTAssertEqual(viewModel.isLoading.value, false, "Expected to have stopped loading.")
     }
     
     // Term property should remain consistent
     func testSearchForNoImagesTerm() throws {
         viewModel.searchBy(term: "jsakldjskaldlksajkdjklsajkdlsajkldjlksajdkl")
         XCTAssertEqual(viewModel.term, "jsakldjskaldlksajkdjklsajkdlsajkldjlksajdkl", "Expected jsakldjskaldlksajkdjklsajkdlsajkldjlksajdkl as a Term")
-    }
-    
-    func testClearHistory() throws {
-        viewModel.clearHistory()
-        XCTAssertEqual(tracker.getHistory().count, 0, "Expected to have no terms left")
     }
     
     func testGetImageDataWithinRange() throws {

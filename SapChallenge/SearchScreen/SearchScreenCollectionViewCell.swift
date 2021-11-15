@@ -13,15 +13,6 @@ class SearchScreenCollectionViewCell: UICollectionViewCell {
     private var imageData: ImageData?
     private var repository: RepositoryProtocol = Repository.sharedInstance
     
-//    init(repository: Repository = Repository.sharedInstance) {
-//        self.repository = repository
-//        super.init(frame: <#T##CGRect#>)
-//    }
-    
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-    
     func configureCell(imageData: ImageData?) {
         guard let imageData = imageData,
               self.imageData != imageData else { return }
@@ -35,9 +26,11 @@ class SearchScreenCollectionViewCell: UICollectionViewCell {
         repository.downloadImage(from: imageData) { [weak self] data in
             guard let strongSelf = self,
                   let data = data else { return }
-            strongSelf.loadingIndicator.isHidden = true
-            strongSelf.loadingIndicator.stopAnimating()
-            strongSelf.imageView.image = UIImage(data: data)
+            DispatchQueue.main.async {
+                strongSelf.loadingIndicator.isHidden = true
+                strongSelf.loadingIndicator.stopAnimating()
+                strongSelf.imageView.image = UIImage(data: data)
+            }
         }
     }
 }

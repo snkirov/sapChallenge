@@ -11,7 +11,7 @@ import TwoWayBondage
 class SearchScreenViewModel {
     
     var imageData = Observable<[ImageData]>()
-    var isInitialyLoading = Observable<Bool>()
+    var isLoading = Observable<Bool>()
     var currentPage = 0
     var maxPages = 0
     var term = ""
@@ -31,16 +31,16 @@ class SearchScreenViewModel {
     
     func searchBy(term: String) {
         self.term = term
+        isLoading.value = true
         imageData.value = []
         guard term != "" else { return }
         historyTracker.addToHistory(term: term)
-        isInitialyLoading.value = true
         repository.getImages(byTerm: term) { [weak self] response in
             guard let strongSelf = self else { return }
             strongSelf.currentPage = response?.page ?? 0
             strongSelf.maxPages = response?.pages ?? 0
             strongSelf.imageData.value = response?.photo
-            strongSelf.isInitialyLoading.value = false
+            strongSelf.isLoading.value = false
         }
     }
     

@@ -16,6 +16,7 @@ class SearchScreenViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var noResultsLabel: UILabel!
     weak var historyController: HistoryScreenViewControllerProtocol?
     
     var viewModel = SearchScreenViewModel()
@@ -47,24 +48,29 @@ class SearchScreenViewController: UIViewController {
     }
     
     private func bindEvents() {
-        viewModel.imageData.bindAndFire { [weak self] _ in
+        viewModel.imageData.bindAndFire { [weak self] results in
             guard let strongSelf = self else { return }
-            if (strongSelf.viewModel.isInitialyLoading.value ?? true) {
-                strongSelf.collectionView.reloadData()
-            } else {
-                UIView.performWithoutAnimation({
+            DispatchQueue.main.async {
+                strongSelf.noResultsLabel.isHidden = (!results.isEmpty || (strongSelf.viewModel.isLoading.value ?? false))
+                if (strongSelf.viewModel.isLoading.value ?? true) {
                     strongSelf.collectionView.reloadData()
-                })
+                } else {
+                    UIView.performWithoutAnimation({
+                        strongSelf.collectionView.reloadData()
+                    })
+                }
             }
         }
         
-        viewModel.isInitialyLoading.bindAndFire { [weak self] isLoading in
+        viewModel.isLoading.bindAndFire { [weak self] isLoading in
             guard let strongSelf = self else { return }
-            strongSelf.loadingIndicator.isHidden = !isLoading
-            if isLoading {
-                strongSelf.loadingIndicator.startAnimating()
-            } else {
-                strongSelf.loadingIndicator.stopAnimating()
+            DispatchQueue.main.async {
+                strongSelf.loadingIndicator.isHidden = !isLoading
+                if isLoading {
+                    strongSelf.loadingIndicator.startAnimating()
+                } else {
+                    strongSelf.loadingIndicator.stopAnimating()
+                }
             }
         }
     }

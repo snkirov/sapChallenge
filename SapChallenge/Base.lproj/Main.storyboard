@@ -70,6 +70,12 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="MwY-Zt-KQb"/>
                                 </connections>
                             </searchBar>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No results found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="KTi-MY-9HU">
+                                <rect key="frame" x="121.5" y="434.5" width="171" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -78,8 +84,10 @@
                             <constraint firstItem="WA1-GL-tlM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7wm-7c-ItM"/>
                             <constraint firstItem="WA1-GL-tlM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Boo-pt-jue"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HQG-fM-44f" secondAttribute="bottom" id="F6M-FJ-y2x"/>
+                            <constraint firstItem="KTi-MY-9HU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="FYE-fb-U6U"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SUp-vc-cMX" secondAttribute="trailing" id="U0U-kO-LX0"/>
                             <constraint firstItem="SUp-vc-cMX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="izC-zP-kZu"/>
+                            <constraint firstItem="KTi-MY-9HU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r2k-Nd-8EX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HQG-fM-44f" secondAttribute="trailing" id="rKY-9b-x2m"/>
                             <constraint firstItem="SUp-vc-cMX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tU8-3d-V3D"/>
                             <constraint firstItem="HQG-fM-44f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tg9-32-7FP"/>
@@ -95,6 +103,7 @@
                     <connections>
                         <outlet property="collectionView" destination="HQG-fM-44f" id="LOP-Ni-5vI"/>
                         <outlet property="loadingIndicator" destination="WA1-GL-tlM" id="e5X-uL-Ati"/>
+                        <outlet property="noResultsLabel" destination="KTi-MY-9HU" id="X4T-pf-jwR"/>
                         <outlet property="searchBar" destination="SUp-vc-cMX" id="pNK-tO-yXX"/>
                     </connections>
                 </viewController>
