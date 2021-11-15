@@ -10,10 +10,12 @@ import UIKit
 class SearchScreenCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
     private var imageData: ImageData?
     private var repository: RepositoryProtocol = Repository.sharedInstance
     
     func configureCell(imageData: ImageData?) {
+        // No need to download images that we already have
         guard let imageData = imageData,
               self.imageData != imageData else { return }
         

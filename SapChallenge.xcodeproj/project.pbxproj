@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0986C79B2741E138006F7F9F /* SearchScreenViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0986C79A2741E138006F7F9F /* SearchScreenViewModelTests.swift */; };
+		0986C79F27420E2E006F7F9F /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0986C79E27420E2E006F7F9F /* Models.swift */; };
 		09D67685273D24A000A865A6 /* HistoryScreenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D67684273D24A000A865A6 /* HistoryScreenTableViewController.swift */; };
 		09D67687273D24B400A865A6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D67686273D24B400A865A6 /* TableViewCell.swift */; };
 		09D6768B273D3F2100A865A6 /* HistoryScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D6768A273D3F2100A865A6 /* HistoryScreenViewModel.swift */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		0986C79A2741E138006F7F9F /* SearchScreenViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewModelTests.swift; sourceTree = "<group>"; };
+		0986C79E27420E2E006F7F9F /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		09D67684273D24A000A865A6 /* HistoryScreenTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryScreenTableViewController.swift; sourceTree = "<group>"; };
 		09D67686273D24B400A865A6 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		09D6768A273D3F2100A865A6 /* HistoryScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryScreenViewModel.swift; sourceTree = "<group>"; };
@@ -116,6 +118,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		0986C79C27420B5F006F7F9F /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				09DB7BD7273C78C000438313 /* Repository.swift */,
+				0986C79E27420E2E006F7F9F /* Models.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		0986C79D27420B6E006F7F9F /* HistoryTracker */ = {
+			isa = PBXGroup;
+			children = (
+				09D6768C273D40A800A865A6 /* HistoryTracker.swift */,
+			);
+			path = HistoryTracker;
+			sourceTree = "<group>";
+		};
 		09D67688273D3E9000A865A6 /* SearchScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,11 +184,11 @@
 				09D67688273D3E9000A865A6 /* SearchScreen */,
 				09DB7BA42738A17200438313 /* AppDelegate.swift */,
 				09DB7BAA2738A17200438313 /* Main.storyboard */,
-				09DB7BAD2738A17800438313 /* Assets.xcassets */,
 				09DB7BAF2738A17800438313 /* LaunchScreen.storyboard */,
+				0986C79C27420B5F006F7F9F /* Repository */,
+				0986C79D27420B6E006F7F9F /* HistoryTracker */,
+				09DB7BAD2738A17800438313 /* Assets.xcassets */,
 				09DB7BB22738A17800438313 /* Info.plist */,
-				09DB7BD7273C78C000438313 /* Repository.swift */,
-				09D6768C273D40A800A865A6 /* HistoryTracker.swift */,
 			);
 			path = SapChallenge;
 			sourceTree = "<group>";
@@ -467,6 +486,7 @@
 				09DB7BDA273C8F6B00438313 /* SearchScreenCollectionViewCell.swift in Sources */,
 				09DB7BD8273C78C000438313 /* Repository.swift in Sources */,
 				09DB7BD6273C78A500438313 /* SearchScreenViewModel.swift in Sources */,
+				0986C79F27420E2E006F7F9F /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

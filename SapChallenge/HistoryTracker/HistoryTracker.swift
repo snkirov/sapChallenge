@@ -19,6 +19,7 @@ class HistoryTracker {
     static let sharedInstance = HistoryTracker()
 }
 
+// MARK: - HistoryTrackerProtocol
 extension HistoryTracker: HistoryTrackerProtocol {
     
     func addToHistory(term: String) {

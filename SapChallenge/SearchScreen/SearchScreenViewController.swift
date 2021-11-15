@@ -26,8 +26,8 @@ class SearchScreenViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = "Search"
-        
         viewModel.searchBy(term: "Munich")
+        searchBar.text = "Munich"
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         view.addGestureRecognizer(tap)
@@ -41,10 +41,9 @@ class SearchScreenViewController: UIViewController {
         vc.delegate = self
         vc.viewModel = HistoryScreenViewModel()
         vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clearHistory))
-        navigationController?.show(vc, sender: self)
-        
         historyController = vc
-        handleTap()
+        handleTap() // Sets the search bar properly
+        navigationController?.show(vc, sender: self)
     }
     
     private func bindEvents() {
@@ -55,6 +54,7 @@ class SearchScreenViewController: UIViewController {
                 if (strongSelf.viewModel.isLoading.value ?? true) {
                     strongSelf.collectionView.reloadData()
                 } else {
+                    // Avoid animation during infinite scroll
                     UIView.performWithoutAnimation({
                         strongSelf.collectionView.reloadData()
                     })
@@ -86,11 +86,10 @@ class SearchScreenViewController: UIViewController {
     }
 }
 
-extension SearchScreenViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    }
-}
+// MARK: - UICollectionViewDelegate
+extension SearchScreenViewController: UICollectionViewDelegate { }
 
+// MARK: - UICollectionViewDelegateFlowLayout
 extension SearchScreenViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.row == viewModel.imagesCount - 10 {
@@ -99,6 +98,7 @@ extension SearchScreenViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+// MARK: - UICollectionViewDataSource
 extension SearchScreenViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -125,27 +125,14 @@ extension SearchScreenViewController: UICollectionViewDataSource {
     }
 }
 
+// MARK: - UISearchBarDelegate
 extension SearchScreenViewController: UISearchBarDelegate {
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        
-    }
-
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        
-    }
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         viewModel.searchBy(term: searchBar.text ?? "")
     }
-
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    }
 }
 
+// MARK: - HistoryDelegate
 extension SearchScreenViewController: HistoryDelegate {
     func didCloseHistoryScreen(didCancel: Bool, term: String) {
         guard !didCancel else { return }

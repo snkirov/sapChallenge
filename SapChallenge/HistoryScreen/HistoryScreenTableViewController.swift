@@ -41,6 +41,7 @@ class HistoryScreenTableViewController: UITableViewController {
     }
 }
 
+// MARK: - HistoryScreenViewControllerProtocol
 extension HistoryScreenTableViewController: HistoryScreenViewControllerProtocol {
     func didClearHistory() {
         viewModel.clearHistory()

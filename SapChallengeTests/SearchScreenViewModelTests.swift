@@ -83,8 +83,8 @@ class SearchScreenViewModelTests: XCTestCase {
 
 private class MockRepositoryService: RepositoryProtocol {
     
-    func getImages(byTerm term: String, completion: @escaping (Dummy?) -> Void) {
-        completion(Dummy(page: 0, pages: 10, photo: imageData))
+    func getImages(byTerm term: String, completion: @escaping (ImageDataContainer?) -> Void) {
+        completion(ImageDataContainer(page: 0, pages: 10, photo: imageData))
         SearchScreenViewModelTests.currentExpectation?.fulfill()
     }
     
