@@ -27,6 +27,6 @@ Your task is to create an iOS mobile app that uses the Flickr image search API a
 <h3> Solution: </h3>
 
 My solution is a simple and intuitive app which consists of 2 screens. One for the infinite collection view and another for the search history. <br>
-I followed the MVVM architectural pattern and when it came to connecting the vm with the vc I made use of TwoWayBondage ( Third party library, similiar to RXSwift) <br>
+I followed the MVVM architectural pattern and when it came to connecting the vm with the vc I made use of TwoWayBondage ( Third party library, responsible for the binding between the VM and VC) <br>
 
 PS: I wanted to make the default screen an overview of flickr recent photos, making use of another endpoint. However due to inaproppriate content on the website I had to scratch that idea.!
